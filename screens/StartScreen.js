@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Notifications } from 'expo';
-import { Image, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-import * as WebBrowser from 'expo-web-browser';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 
 // This refers to the function defined earlier in this guide
 import { registerForPushNotificationsAsync } from '../utils'

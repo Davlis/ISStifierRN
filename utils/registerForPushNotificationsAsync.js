@@ -1,4 +1,6 @@
-import Expo, { Notifications } from 'expo';
+import { Notifications } from 'expo';
+import ExpoConstants from 'expo-constants';
+
 import * as Permissions from 'expo-permissions';
 
 // TODO: environment variable
@@ -17,6 +19,8 @@ export default async function registerForPushNotificationsAsync() {
     return;
   }
 
+  console.log('ExpoConstants.deviceId', ExpoConstants.deviceId,)
+
   // Get the token that identifies this device
   const token = await Notifications.getExpoPushTokenAsync();
 
@@ -31,7 +35,7 @@ export default async function registerForPushNotificationsAsync() {
     },
     body: JSON.stringify({
       token,
-      deviceId: Expo.Constants.deviceId,
+      deviceId: ExpoConstants.deviceId,
       message: {
         username: 'Brent',
       }
